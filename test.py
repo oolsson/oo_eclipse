@@ -1,3 +1,3 @@
-print 'ppp'
 
-'pppppp'
+
+print 'pppoooooooooooppp'
