@@ -1,0 +1,44 @@
+#!/usr/bin/env python
+import wx
+
+
+class ToolbarFrame(wx.Frame):
+    def __init__(self, parent, id):
+        wx.Frame.__init__(self, parent, id, 'Toolbars',
+                          size=(400, 400))
+        panel = wx.Panel(self)
+        panel.SetBackgroundColour('White')
+        statusBar = self.CreateStatusBar()
+        
+        menuBar = wx.MenuBar()                                       #creates the menuebar
+        self.SetMenuBar(menuBar)                                     #attaches the menuebar to the frame
+        
+        menu1 = wx.Menu()                                            #creates a submenue menue1
+        menuBar.Append(menu1, "&File")
+        miExit = menu1.Append(wx.NewId(), "Exit", "closeprog")       #attaches the submenue1 to the menuebar under the name file 
+        self.Bind(wx.EVT_MENU, self.OnCloseMe, miExit)               #binding the exit menue item to the close method
+        
+        menu2 = wx.Menu()                                            #creates a submenue menue2
+        menuBar.Append(menu2, "&Edit")                                                                 
+        menu2.Append(wx.NewId(), "&Copy", "Copy in status bar")     #creates a menueitem to submenue2
+        menu2.Append(wx.NewId(), "Cut", "")
+        menu2.Append(wx.NewId(), "Paste", "")
+        menu2.AppendSeparator()
+        menu2.Append(wx.NewId(), "&Options...", "Display Options")  
+        
+        button = wx.Button(panel, -1, "Close", pos=(130, 15), size=(40, 40))
+        
+        #self.Bind(wx.EVT_CLOSE, self.OnCloseWindow)
+        self.Bind(wx.EVT_BUTTON, self.OnCloseMe, button)
+         
+    def OnCloseMe(self, event):
+        self.Close(True)
+    def OnCloseWindow(self, event):
+        self.Destroy() 
+        
+        
+if __name__ == '__main__':
+    app = wx.PySimpleApp()
+    frame = ToolbarFrame(parent=None, id=-1)
+    frame.Show()
+    app.MainLoop()
