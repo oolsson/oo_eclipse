@@ -5,15 +5,13 @@ import matplotlib.pyplot as plt
 # pd.options.display.mpl_style = 'default'
 
 
-# xl = pd.ExcelFile("C:\Users\oskar\Documents\GitHub\oo_eclipse\my_stuff\Data\Retail_turnover.xls")
-# x = xl.parse("Sheet1")
-# print x.head(10)
-# fig=x.plot()
+xl = pd.ExcelFile("C:\Users\oskar\Documents\GitHub\oo_eclipse\my_stuff\Data\Retail_turnover.xls")
+x = xl.parse("Sheet1")
+print x.head(10)
 
-ts = pd.Series(np.random.randn(1000), index=pd.date_range('1/1/2000', periods=1000))
 
-ts = ts.cumsum()
 
-ts.plot()
+
+x.plot()
 plt.show()
 
