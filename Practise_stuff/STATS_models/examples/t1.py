@@ -4,6 +4,7 @@ from pandas.io.parsers import *
 import matplotlib.pyplot as plt
 import statsmodels.api as sm
 
+"http://conference.scipy.org/scipy2011/slides/mckinney_time_series.pdf"
 
 
 # acf = sm.tsa.acf(eeg,50)
