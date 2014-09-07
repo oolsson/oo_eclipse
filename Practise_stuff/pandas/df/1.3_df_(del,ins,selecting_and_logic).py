@@ -29,10 +29,12 @@ df.insert(0, 'bar', df['one'])
 print df
 #print 'selecting rows----------------'
 #print df.xs('b')
-#print df.ix[1]
-
-print 'multilogic----------------'
+# print df.ix[1]
+df=df.reindex(df.index[1:]) 'drop first row'
 print df
-print '--------------'
-print min(df['two'].ix[1:3])
-print df.ix[1]
+
+# print 'multilogic----------------'
+# print df
+# print '--------------'
+# print min(df['two'].ix[1:3])
+# print df.ix[1]

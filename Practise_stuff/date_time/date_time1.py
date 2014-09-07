@@ -1,5 +1,6 @@
 import datetime as dt
 import pandas as pd
+import parser as pars
 
 d1=dt.date(2012, 03, 01)
 d2=d1+dt.timedelta(days=3)

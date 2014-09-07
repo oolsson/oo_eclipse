@@ -53,3 +53,6 @@ def parse_options_data(table):
 
 call_data = parse_options_data(calls)
 print call_data[:10]
+# call_data=call_data.drop_duplicates(['strike'])
+
+print call_data.to_string()
