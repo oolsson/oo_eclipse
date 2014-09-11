@@ -11,4 +11,6 @@ SPX = DataReader("SP500",  "fred", datetime(2011,1,1), datetime(2012,1,11)).appl
 SPX['ma']=talib.SMA(SPX['SP500'],5)
 SPX['mom']=talib.MOM(SPX['SP500'], timeperiod=5)
 SPX['RSI']=talib.RSI(SPX['SP500'], timeperiod=14)
-print SPX.to_string()
+print SPX.tail(7)
+
+plt.show(plt.plot(SPX))
