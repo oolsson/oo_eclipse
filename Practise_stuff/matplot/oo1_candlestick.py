@@ -39,7 +39,7 @@ candlestick(ax, quotes, width=0.6) #width is size of candles
 ax.plot(high)
 ax.xaxis_date()
 ax.autoscale_view()
-setp( gca().get_xticklabels(), rotation=20, horizontalalignment='right')
+# setp( gca().get_xticklabels(), rotation=20, horizontalalignment='right')
 
 ax.plot(high)
 

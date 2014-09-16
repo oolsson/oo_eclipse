@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from pandas.io.parsers import *
 import matplotlib.pyplot as plt
-# pd.options.display.mpl_style = 'default'
+# pd.options.display.mpl_style = 'defaut'
 
 
 xl = pd.ExcelFile("C:\Users\oskar\Documents\GitHub\oo_eclipse\my_stuff\Data\Retail_turnover.xls")

@@ -55,9 +55,18 @@ d=get_data(dt.datetime(2012, 12, 31),dt.datetime(2013, 2, 28),'ABB')
      
 
 d= d.iloc[:,0:4]
+d = d.reset_index(drop=True)
 d.insert(0,'d',d.index)
-d['d']=d['d'].apply(lambda date: mdates.date2num(date.to_pydatetime()))
+print d.head(8)
+# d['d']=d['d'].apply(lambda date: mdates.date2num(date.to_pydatetime()))
 
 fig, ax = plt.subplots()
-csticks = candlestick(ax, d[['d', 'Open', 'Close', 'High', 'Low']].values)
+print ax
+fig =candlestick(ax, d[['d', 'Open', 'Close', 'High', 'Low']].values)
+# print help(plt)
+
+b=d['Open']-3
+b.index=d['d']
+ax.plot(b)
+# ax.set_xbound(lower=ax[0], upper=ax[-1])
 plt.show()
