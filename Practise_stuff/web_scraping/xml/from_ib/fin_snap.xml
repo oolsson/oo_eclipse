@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportSnapshot Major="1" Minor="0" Revision="1">
+	<CoIDs>
+		<CoID Type="RepNo">57840</CoID>
+		<CoID Type="CompanyName">Microsoft Corporation</CoID>
+		<CoID Type="IRSNo">911144442</CoID>
+		<CoID Type="CIKNo">0000789019</CoID>
+	</CoIDs>
+	<Issues>
+		<Issue ID="1" Type="C" Desc="Common Stock" Order="1">
+			<IssueID Type="Name">Ordinary Shares</IssueID>
+			<IssueID Type="Ticker">MSFT</IssueID>
+			<IssueID Type="CUSIP">594918104</IssueID>
+			<IssueID Type="ISIN">US5949181045</IssueID>
+			<IssueID Type="RIC">MSFT.O</IssueID>
+			<IssueID Type="SEDOL">2588173</IssueID>
+			<IssueID Type="DisplayRIC">MSFT.OQ</IssueID>
+			<IssueID Type="InstrumentPI">264998</IssueID>
+			<IssueID Type="QuotePI">7759230</IssueID>
+			<Exchange Code="NASD" Country="USA">NASDAQ</Exchange>
+			<MostRecentSplit Date="2003-02-18">2.0</MostRecentSplit>
+		</Issue>
+		<Issue ID="2" Type="P" Desc="Preferred Stock" Order="1">
+			<IssueID Type="Name">Preference Shares</IssueID>
+			<IssueID Type="CUSIP">594918203</IssueID>
+			<IssueID Type="ISIN">US5949182035</IssueID>
+			<IssueID Type="RIC">MSFTP.PK^A02</IssueID>
+			<IssueID Type="InstrumentPI">295695</IssueID>
+			<IssueID Type="QuotePI">1414957</IssueID>
+			<Exchange Code="OTC" Country="USA">Over The Counter</Exchange>
+		</Issue>
+	</Issues>
+	<CoGeneralInfo>
+		<CoStatus Code="1">Active</CoStatus>
+		<CoType Code="EQU">Equity Issue</CoType>
+		<LastModified>2014-09-22</LastModified>
+		<LatestAvailableAnnual>2014-06-30</LatestAvailableAnnual>
+		<LatestAvailableInterim>2014-06-30</LatestAvailableInterim>
+		<Employees LastUpdated="2014-06-30">128000</Employees>
+		<SharesOut Date="2014-07-22" TotalFloat="7603274241.0">8239848789.0</SharesOut>
+		<CommonShareholders Date="2014-06-30">113923</CommonShareholders>
+		<ReportingCurrency Code="USD">U.S. Dollars</ReportingCurrency>
+		<MostRecentExchange Date="2014-09-24">1.0</MostRecentExchange>
+	</CoGeneralInfo>
+	<TextInfo>
+		<Text Type="Business Summary" lastModified="2014-07-16T04:32:50">Microsoft Corporation is engaged in developing, licensing and supporting a range of software products and services. The Company also designs and sells hardware, and delivers online advertising to the customers. The Company operates in five segments: Windows &amp; Windows Live Division (Windows Division), Server and Tools, Online Services Division (OSD), Microsoft Business Division (MBD), and Entertainment and Devices Division (EDD). The Companys products include operating systems for personal computers (PCs), servers, phones, and other intelligent devices; server applications for distributed computing environments; productivity applications; business solution applications; desktop and server management tools; software development tools; video games, and online advertising. Effective July 11, 2014, Microsoft Corp acquired InMage Systems Inc.</Text>
+		<Text Type="Financial Summary" lastModified="2014-09-22T14:37:35">BRIEF: For the fiscal year ended 30 June 2014, Microsoft Corporation revenues increased 12% to $86.83B. Net income increased 1% to $22.07B. Revenues reflect DeVices and Consumer-Hardware segment increase of 49% to $9.63B, Commercial- Licensing segment increase of 6% to $42.03B, Devices and Consumer-Phone Hardware segment increase from $0K to $1.99B, Outside the United States/Other Countries. segment increase of 19% to $43.36B.</Text>
+	</TextInfo>
+	<contactInfo lastUpdated="2014-09-22T15:05:46">
+		<streetAddress line="1">One Microsoft Way</streetAddress>
+		<streetAddress line="2"></streetAddress>
+		<streetAddress line="3"></streetAddress>
+		<city>REDMOND</city>
+		<state-region>WA</state-region>
+		<postalCode>98052-6399</postalCode>
+		<country code="USA">United States</country>
+		<contactName>Chris Suh</contactName>
+		<contactTitle>General Manager - Investor Relations</contactTitle>
+		<phone>
+			<phone type="mainphone">
+				<countryPhoneCode>1</countryPhoneCode>
+				<city-areacode>425</city-areacode>
+				<number>8828080</number>
+			</phone>
+			<phone type="contactphone">
+				<countryPhoneCode>1</countryPhoneCode>
+				<city-areacode>425</city-areacode>
+				<number>7064400</number>
+			</phone>
+		</phone>
+	</contactInfo>
+	<webLinks lastUpdated="2013-06-21T04:50:09"><webSite mainCategory="Home Page">http://www.microsoft.com</webSite><webSite mainCategory="News Releases">http://www.microsoft.com/en-us/news/press/NewsArchive.aspx?feedid=pressreleases</webSite><webSite mainCategory="Investor Relations">http://www.microsoft.com/investor/default.aspx</webSite><webSite mainCategory="Financial Information">http://www.microsoft.com/investor/SEC/default.aspx</webSite><webSite mainCategory="Corporate History/Profile">http://www.microsoft.com/about/companyinformation/en/us/default.aspx</webSite><webSite mainCategory="Executives">http://www.microsoft.com/about/companyinformation/executivesanddirectors/en/us/default.aspx</webSite><webSite mainCategory="Products/Services">http://www.microsoft.com/en-us/news/apps/default.aspx</webSite><webSite mainCategory="Employment Opportunities">http://careers.microsoft.com/</webSite><eMail mainCategory="Company Contact/E-mail">msft@microsoft.com</eMail></webLinks>
+	<peerInfo lastUpdated="2014-09-22T15:05:46">
+		<IndustryInfo>
+			<Industry type="TRBC" order="1" reported="0" code="5720102010" mnem="">Software - NEC</Industry>
+			<Industry type="NAICS" order="1" reported="0" code="51121" mnem="">Software Publishers</Industry>
+			<Industry type="NAICS" order="2" reported="0" code="334119" mnem="">Other Computer Peripheral Equipment Manufacturing</Industry>
+			<Industry type="NAICS" order="3" reported="0" code="514191" mnem="">On-Line Information Services</Industry>
+			<Industry type="NAICS" order="4" reported="0" code="334111" mnem="">Electronic Computer Manufacturing</Industry>
+			<Industry type="NAICS" order="5" reported="0" code="541512" mnem="">Computer Systems Design Services</Industry>
+			<Industry type="NAICS" order="6" reported="0" code="541511" mnem="">Custom Computer Programming Services</Industry>
+			<Industry type="NAICS" order="7" reported="0" code="541519" mnem="">Other Computer Related Services</Industry>
+			<Industry type="SIC" order="0" reported="1" code="7372" mnem="">Prepackaged Software</Industry>
+			<Industry type="SIC" order="1" reported="0" code="7372" mnem="">Prepackaged Software</Industry>
+			<Industry type="SIC" order="2" reported="0" code="3577" mnem="">Computer Periph'L Equipment, Nec</Industry>
+			<Industry type="SIC" order="3" reported="0" code="7375" mnem="">Information Retrieval Services</Industry>
+			<Industry type="SIC" order="4" reported="0" code="3571" mnem="">Electronic Computers</Industry>
+			<Industry type="SIC" order="5" reported="0" code="7373" mnem="">Computer Integrated System Design</Industry>
+			<Industry type="SIC" order="6" reported="0" code="7371" mnem="">Computer Programming Services</Industry>
+			<Industry type="SIC" order="7" reported="0" code="7379" mnem="">Computer Related Services, Nec</Industry>
+		</IndustryInfo>
+		<Indexconstituet>S&amp;P 500</Indexconstituet>
+		<Indexconstituet>Dow Industry</Indexconstituet>
+	</peerInfo>
+	<officers>
+		<officer rank="1" since="02/04/2014">
+			<firstName>John</firstName>
+			<mI>Wendell</mI>
+			<lastName>Thompson</lastName>
+			<age>64 </age>
+			<title startYear="2014" startMonth="02" startDay="04" iD1="CHM" abbr1="Chmn." iD2="DRC" abbr2="Dir.">Independent Chairman of the Board</title>
+		</officer>
+		<officer rank="2" since="02/09/2011">
+			<firstName>Satya</firstName>
+			<mI></mI>
+			<lastName>Nadella</lastName>
+			<age>47 </age>
+			<title startYear="2014" startMonth="02" startDay="04" iD1="CEO" abbr1="CEO" iD2="DRC" abbr2="Dir.">Chief Executive Officer, Director</title>
+		</officer>
+		<officer rank="3" since="1981">
+			<firstName>William</firstName>
+			<mI>H.</mI>
+			<lastName>Gates</lastName>
+			<age>59 </age>
+			<title startYear="2014" startMonth="02" startDay="04" iD1="FDR" abbr1="Fndr." iD2="DRC" abbr2="Dir.">Founder and Technology Advisor, Director</title>
+		</officer>
+		<officer rank="4" since="05/08/2013">
+			<firstName>Amy</firstName>
+			<mI>E.</mI>
+			<lastName>Hood</lastName>
+			<age>41 </age>
+			<title startYear="2013" startMonth="05" startDay="08" iD1="CFO" abbr1="CFO" iD2="EVP" abbr2="Exec. VP">Chief Financial Officer, Executive Vice President</title>
+		</officer>
+		<officer rank="5" since="09/2005">
+			<firstName>Brian</firstName>
+			<mI>Kevin</mI>
+			<lastName>Turner</lastName>
+			<age>48 </age>
+			<title startYear="2005" startMonth="09" startDay="" iD1="COO" abbr1="COO" iD2="" abbr2="">Chief Operating Officer</title>
+		</officer>
+		<officer rank="6" since="11/21/2001">
+			<firstName>Bradford</firstName>
+			<mI>L.</mI>
+			<lastName>Smith</lastName>
+			<age>54 </age>
+			<title startYear="2011" startMonth="" startDay="" iD1="EVP" abbr1="Exec. VP" iD2="GCN" abbr2="Counsel">Executive Vice President, General Counsel, Secretary</title>
+		</officer>
+		<officer rank="7" since="07/2013">
+			<firstName>Tami</firstName>
+			<mI>L.</mI>
+			<lastName>Reller</lastName>
+			<age>49 </age>
+			<title startYear="2013" startMonth="07" startDay="" iD1="EVP" abbr1="Exec. VP" iD2="DMK" abbr2="Dir.-Mktg.">Executive Vice President - Marketing</title>
+		</officer>
+		<officer rank="8" since="05/2005">
+			<firstName>Lisa</firstName>
+			<mI>E.</mI>
+			<lastName>Brummel</lastName>
+			<age>53 </age>
+			<title startYear="2013" startMonth="" startDay="" iD1="EVP" abbr1="Exec. VP" iD2="DHR" abbr2="Dir.-HR">Executive Vice President - Human Resources</title>
+		</officer>
+		<officer rank="9" since="NA">
+			<firstName>Eric</firstName>
+			<mI>D.</mI>
+			<lastName>Rudder</lastName>
+			<age>46 </age>
+			<title startYear="2013" startMonth="07" startDay="" iD1="EVP" abbr1="Exec. VP" iD2="" abbr2="">Executive Vice President - Advanced Strategy and Research</title>
+		</officer>
+		<officer rank="10" since="01/01/2014">
+			<firstName>Jim</firstName>
+			<mI></mI>
+			<lastName>DuBois</lastName>
+			<age></age>
+			<title startYear="2014" startMonth="01" startDay="01" iD1="CIO" abbr1="CIO" iD2="VPR" abbr2="VP">Chief Information Officer, Corporate Vice President</title>
+		</officer>
+	</officers>
+	<Ratios PriceCurrency="USD" ReportingCurrency="USD" ExchangeRate="1.00000" LatestAvailableDate="2014-06-30">
+		<Group ID="Price and Volume">
+			<Ratio FieldName="NPRICE" Type="N">46.04000</Ratio>
+			<Ratio FieldName="NHIG" Type="N">47.57000</Ratio>
+			<Ratio FieldName="NLOW" Type="N">32.59000</Ratio>
+			<Ratio FieldName="PDATE" Type="D">2014-09-25T00:00:00</Ratio>
+			<Ratio FieldName="VOL10DAVG" Type="N">51.19977</Ratio>
+			<Ratio FieldName="EV" Type="N">316542.60000</Ratio>
+		</Group>
+		<Group ID="Income Statement">
+			<Ratio FieldName="MKTCAP" Type="N">379362.60000</Ratio>
+			<Ratio FieldName="TTMREV" Type="N">86833.00000</Ratio>
+			<Ratio FieldName="TTMEBITD" Type="N">33098.00000</Ratio>
+			<Ratio FieldName="TTMNIAC" Type="N">22074.00000</Ratio>
+		</Group>
+		<Group ID="Per share data">
+			<Ratio FieldName="TTMEPSXCLX" Type="N">2.63090</Ratio>
+			<Ratio FieldName="TTMREVPS" Type="N">10.34989</Ratio>
+			<Ratio FieldName="QBVPS" Type="N">10.89744</Ratio>
+			<Ratio FieldName="QCSHPS" Type="N">10.37322</Ratio>
+			<Ratio FieldName="TTMCFSHR" Type="N">3.25230</Ratio>
+			<Ratio FieldName="TTMDIVSHR" Type="N">1.12000</Ratio>
+		</Group>
+		<Group ID="Other Ratios">
+			<Ratio FieldName="TTMGROSMGN" Type="N">68.98184</Ratio>
+			<Ratio FieldName="TTMROEPCT" Type="N">26.16519</Ratio>
+			<Ratio FieldName="TTMPR2REV" Type="N">4.36888</Ratio>
+			<Ratio FieldName="PEEXCLXOR" Type="N">17.49971</Ratio>
+			<Ratio FieldName="PRICE2BK" Type="N">4.22485</Ratio>
+			<Ratio FieldName="Employees" Type="N">128000</Ratio>
+		</Group>
+	</Ratios>
+	<ForecastData ConsensusType="Mean" CurFiscalYear="2015" CurFiscalYearEndMonth="6" CurInterimEndCalYear="2014" CurInterimEndMonth="9" EarningsBasis="PRX">
+		<Ratio FieldName="ConsRecom" Type="N">
+			<Value PeriodType="CURR">2.5</Value>
+		</Ratio>
+		<Ratio FieldName="TargetPrice" Type="N">
+			<Value PeriodType="CURR">47.92860</Value>
+		</Ratio>
+		<Ratio FieldName="ProjLTGrowthRate" Type="N">
+			<Value PeriodType="CURR">7.5000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjPE" Type="N">
+			<Value PeriodType="CURR">16.96077</Value>
+		</Ratio>
+		<Ratio FieldName="ProjSales" Type="N">
+			<Value PeriodType="CURR">99136.36400</Value>
+		</Ratio>
+		<Ratio FieldName="ProjSalesQ" Type="N">
+			<Value PeriodType="CURR">22014.38270</Value>
+		</Ratio>
+		<Ratio FieldName="ProjEPS" Type="N">
+			<Value PeriodType="CURR">2.71450</Value>
+		</Ratio>
+		<Ratio FieldName="ProjEPSQ" Type="N">
+			<Value PeriodType="CURR">0.48950</Value>
+		</Ratio>
+		<Ratio FieldName="ProjProfit" Type="N">
+			<Value PeriodType="CURR">-99999.99000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjDPS" Type="N">
+			<Value PeriodType="CURR">1.13290</Value>
+		</Ratio>
+	</ForecastData>
+</ReportSnapshot>
