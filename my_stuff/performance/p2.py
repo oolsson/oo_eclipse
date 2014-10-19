@@ -23,22 +23,36 @@ df = xl.parse("sheet1",  index_col=0,  skiprows=0)
  
  
 df.columns=['p','b']
-df[['pr','br']]=df.pct_change(1)
-print df.head(7)
-df[['pi','bi']]=df[['pr','br']]+1
-df['sig']=df['pr']>0
+df=df['p']
+df=pd.DataFrame(df)
+
+df['pr']=df.pct_change(1)
+df['pi']=df['pr']+1
+df['sig']=df['pr']>0.01
 df1=df.groupby(df.index.map(lambda x: x.year)).mean()
 #sesonality
-df2=df[['pi','bi']].groupby(df.index.map(lambda x: x.month)).prod()
-df2c=252/df[['pi','bi']].groupby(df.index.map(lambda x: x.month)).count()
+df2=df['pi'].groupby(df.index.map(lambda x: x.month)).prod()
+df2c=252/df['pi'].groupby(df.index.map(lambda x: x.month)).count()
 df2r=df2**df2c
-df2p=df['pi'].groupby(df.index.map(lambda x: x.month))
+# print df2r.to_string()
+# df2p=df['pi'].groupby(df.index.map(lambda x: x.month))
+# for i in df2p.index:
+#     print df2p.ix[i]
 
-
-#
-df3=df[['pi','bi']].groupby(df['sig']).prod()
+#signal alaysis
+df3=df['pi'].groupby(df['sig']).prod()
+df3=df['pi'].groupby(df['sig'])
+print df3.to_string()
+# print df3.get_group(True)
+df4=pd.DataFrame()
+for i in df3.groups:
+    print i
+    ii=df3.get_group(i).reset_index()
+    print ii
+#     df4[i]=ii.values
  
  
 # print df.describe()
 
-print df2r.to_string()
+
+
