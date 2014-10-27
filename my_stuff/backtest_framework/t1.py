@@ -44,7 +44,7 @@ def ret_buy_bucket(rank,ret,num_buckets):
 
 #     print w_ret
 
-xx=ret_buy_bucket(rank,df2,1)
+xx=ret_buy_bucket(rank,df2,3)
 # ret=sig*ret_individual
 # ret2=ret.sum(axis=1)
 

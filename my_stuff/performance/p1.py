@@ -24,21 +24,34 @@ df = xl.parse("sheet1",  index_col=0,  skiprows=0)
  
 df.columns=['p','b']
 df[['pr','br']]=df.pct_change(1)
-print df.head(7)
+
 df[['pi','bi']]=df[['pr','br']]+1
-df['sig']=df['pr']>0
+
+df['sig']=(df['pr']>0.005)*1
+df['sig2']=(df['pr']>0.009)*1
+portsig_str=df[['sig','sig2']].astype(str)
+df['sig_c']=portsig_str['sig']+portsig_str['sig2']
+print df.head(27)
+
+
 df1=df.groupby(df.index.map(lambda x: x.year)).mean()
-#sesonality
+print df1
+
+#annual return bu month
 df2=df[['pi','bi']].groupby(df.index.map(lambda x: x.month)).prod()
 df2c=252/df[['pi','bi']].groupby(df.index.map(lambda x: x.month)).count()
 df2r=df2**df2c
 df2p=df['pi'].groupby(df.index.map(lambda x: x.month))
+print df2p.to_string()
 
 
-#
-df3=df[['pi','bi']].groupby(df['sig']).prod()
+# return by signal
+df3=df[['pi','bi']].groupby(df['sig_c']).prod()
+print df3.to_string()
  
  
 # print df.describe()
 
-print df2r.to_string()
+# print (df2r-1).to_string()
+# print df3.to_string()
+# print df.to_string()

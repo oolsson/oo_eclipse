@@ -47,6 +47,7 @@ print df3.to_string()
 df4=pd.DataFrame()
 for i in df3.groups:
     print i
+    print '-----------------------------'
     ii=df3.get_group(i).reset_index()
     print ii
 #     df4[i]=ii.values
