@@ -16,8 +16,8 @@ urls = [lnk.get('href') for lnk in body.findAll('a')]
 
 
 tables = body.findAll('table')
-# for i in tables: print i
-calls = tables[9]
+for i in tables: print 'p'
+calls = tables[1]
 print calls
 rows = calls.findAll('tr')
 
