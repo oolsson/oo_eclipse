@@ -34,23 +34,29 @@ df1=df.groupby(df.index.map(lambda x: x.year)).mean()
 df2=df['pi'].groupby(df.index.map(lambda x: x.month)).prod()
 df2c=252/df['pi'].groupby(df.index.map(lambda x: x.month)).count()
 df2r=df2**df2c
-# print df2r.to_string()
-# df2p=df['pi'].groupby(df.index.map(lambda x: x.month))
-# for i in df2p.index:
-#     print df2p.ix[i]
+print df2r.to_string()
 
-#signal alaysis
-df3=df['pi'].groupby(df['sig']).prod()
-df3=df['pi'].groupby(df['sig'])
-print df3.to_string()
-# print df3.get_group(True)
-df4=pd.DataFrame()
-for i in df3.groups:
+#take a dataframe and group by some way then loop through the the groups
+df2p=df['pi'].groupby(df.index.map(lambda x: x.month))
+print df2p.to_string()
+for i in df2p.groups:
     print i
     print '-----------------------------'
-    ii=df3.get_group(i).reset_index()
+    ii=df2p.get_group(i).reset_index()
     print ii
-#     df4[i]=ii.values
+
+#signal alaysis
+# df3=df['pi'].groupby(df['sig']).prod()
+# df3=df['pi'].groupby(df['sig'])
+# print df3.to_string()
+# # print df3.get_group(True)
+# df4=pd.DataFrame()
+# for i in df3.groups:
+#     print i
+#     print '-----------------------------'
+#     ii=df3.get_group(i).reset_index()
+#     print ii
+# #     df4[i]=ii.values
  
  
 # print df.describe()
