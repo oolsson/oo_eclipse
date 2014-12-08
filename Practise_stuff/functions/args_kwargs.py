@@ -31,4 +31,4 @@ def test_var_kwargs(farg, **kwargs):
 test_var_kwargs(farg=1, myarg2="two", myarg3=3)
 #test_var_kwargs(farg=1, myarg2="two")
 print '-----------'
-#test_var_args(1, "two", 3)
+test_var_args(1, "two", 3)

@@ -4,7 +4,7 @@ from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.units import inch
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 
-doc = SimpleDocTemplate("paragraphs.pdf", pagesize=letter)
+doc = SimpleDocTemplate("paragraphs2.pdf", pagesize=letter)
 parts = []
 
 style = ParagraphStyle(

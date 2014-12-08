@@ -5,6 +5,7 @@ import numpy as np
 import Quandl
 from datetime import datetime
 import datetime as dt
+import zz_my.oo_functions as oof
 
 end=dt.datetime.today()
 start=datetime(2013,1,1)
@@ -29,24 +30,27 @@ df[['pi','bi']]=df[['pr','br']]+1
 
 df['sig']=(df['pr']>0.005)*1
 df['sig2']=(df['pr']>0.009)*1
-portsig_str=df[['sig','sig2']].astype(str)
-df['sig_c']=portsig_str['sig']+portsig_str['sig2']
+# portsig_str=df[['sig','sig2']].astype(str)
+# df['sig_c']=portsig_str['sig']+portsig_str['sig2']
+df['sig_c']=oof.oo_uneque_sig(df[['sig','sig2']])
 print df.head(27)
 
 
-df1=df.groupby(df.index.map(lambda x: x.year)).mean()
+# df1=df.groupby(df.index.map(lambda x: x.year)).mean()
+df1=df['pi'].groupby(df.index.map(lambda x: x.year)).prod()
 print df1
 
 #annual return bu month
-df2=df[['pi','bi']].groupby(df.index.map(lambda x: x.month)).prod()
-df2c=252/df[['pi','bi']].groupby(df.index.map(lambda x: x.month)).count()
-df2r=df2**df2c
-df2p=df['pi'].groupby(df.index.map(lambda x: x.month))
-print df2p.to_string()
+# df2=df[['pi','bi']].groupby(df.index.map(lambda x: x.month)).prod()
+# df2c=252/df[['pi','bi']].groupby(df.index.map(lambda x: x.month)).count()
+# df2r=df2**df2c
+# df2p=df['pi'].groupby(df.index.map(lambda x: x.month))
+# print df2p.to_string()
 
 
 # return by signal
 df3=df[['pi','bi']].groupby(df['sig_c']).prod()
+# df3=df[['pi','bi']].groupby(df['sig_c']).quantile(.2)
 print df3.to_string()
  
  
