@@ -97,5 +97,5 @@ im.hAlign = 'CENTER'
 story.append(im)
 
 #build our document with the list of flowables we put together
-doc = SimpleDocTemplate('C:/Users/oo\Documents/python_none_pythonfiles/py_pdf/mydoc.pdf',pagesize = letter, topMargin=0)
+doc = SimpleDocTemplate('C:/Users/oo\Documents/python_none_pythonfiles/py_pdf/mydoc2.pdf',pagesize = letter, topMargin=0)
 doc.build(story)

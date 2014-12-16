@@ -10,7 +10,7 @@ import Quandl
 
 xl = pd.ExcelFile("C:\Users\oskar\Documents\GitHub\oo_eclipse\my_stuff\Data\sp500.xls")
 df = xl.parse("sheet1",  index_col=0,  skiprows=0)
-print df.head(3)
+# print df.head(3)
  
 
 df.columns=['e','b']
@@ -24,14 +24,16 @@ df['sig2']=(df['b']>pd.rolling_mean(df['b'], 2))*1
 df['sig_c']=oof.oo_uneque_sig(df[['sig','sig2']])
 
 
-df=op.oo_perf_per_sig(df[['e','b','sig_c']])            #4
-print df
+# df=op.oo_perf_per_sig(df[['e','b','sig_c']])            #4
+df=op.oo_split_bysig(df[['e','sig_c']])                   #5
+dfa=(df+1).cumprod()
+# print df
 
-#report
+# #report
 perf_rep=rp.newreport()
 perf_rep.addlogo()
 perf_rep.pic=rp.pic_num()
-
+ 
 plt.subplot(111)
 plt.plot(dfa.index,dfa)
 perf_rep.pic.new()
@@ -39,5 +41,5 @@ plt.savefig("C:/Users/oskar/Documents/doc_no_backup/python_crap/temp/%s.png" %(s
 perf_rep.addimage("C:/Users/oskar/Documents/doc_no_backup/python_crap/temp/%s.png"%(str(perf_rep.pic.num)),7,4,'LEFT')
 #         plt.show()
 plt.close()
-
+ 
 perf_rep.writereport('perf')

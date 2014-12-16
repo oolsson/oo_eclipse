@@ -64,4 +64,17 @@ def oo_perf_per_sig(df):
     df3=df2**af
     df3=df3.iloc[:,:-1]
     return df3
+
+def oo_split_bysig(df):
+    df.iloc[:,0]=df.iloc[:,0].pct_change(periods=1).shift(1)
+    df2=df.iloc[:,0].groupby(df['sig_c'])
+    df3=pd.DataFrame()
+    for i in df2.groups:
+        ii=df2.get_group(i).reset_index()
+        if len(ii.index)>len(df3.index):
+            df3=df3.reindex(index=ii.index)
+        else:pass
+        df3[i]=ii.iloc[:,1]
+    return df3
+
     
