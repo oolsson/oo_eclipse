@@ -5,7 +5,7 @@ from sklearn.decomposition import PCA
 
 # np.log(2.888)
 
-print help(pd.ExcelFile)
+# print help(pd.ExcelFile)
 xl = pd.ExcelFile("C:/Users/oskar/Documents/GitHub/oo_eclipse/my_stuff/Data/ass1.xls", index_col=0)
 data = xl.parse("Sheet3")
  

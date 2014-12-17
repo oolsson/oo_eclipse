@@ -40,6 +40,20 @@ def myTable(tabledata):
     t.setStyle(GRID_STYLE)
     return t
 
+def dfTable(df):
+    df2 = df.reset_index() # reset the index so row labels show up in the reportlab table
+    n = df2.columns.nlevels # number of table header rows to repeat
+    if n > 1:
+        labels = map(list, zip(*df2.columns.values))
+    else:
+        labels = [df2.columns[:,].values.astype(str).tolist()]
+    values = df2.values.tolist()
+    datalist = labels + values
+    print datalist
+    print'----------'
+    print n
+    return datalist, n
+
 #create a bar chart and specify positions, sizes, and colors
 def myBarChart(data):
     drawing = Drawing(400, 200)
@@ -121,10 +135,13 @@ tabledata = (
 ['', 'Trial 1', 1, 'Trial 3','Trial 4','Trial 5'],
 dataToTable(subject1, results1),
 dataToTable(subject2, results2))
+print tabledata
+print 'pppppppppppp'
 
 df=pd.DataFrame([[1,1,1],[2,2,2]],index=['a','s'],columns=['A','K','P'])
 
-story.append(myTable(df))
+dfTable(df)
+# story.append(dfTable(df))
 story.append(Spacer(1,.5*inch))
 
 #add our barchart and legend

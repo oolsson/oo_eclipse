@@ -22,9 +22,10 @@ data = np.log(mdata).diff().dropna()
 # make a VAR model
 model = statsmodels.tsa.api.VAR(data)
 
-results = model.fit(2)
+results = model.fit()
 
 print results.summary()
-plt.show(results.plot())
+# plt.show(results.plot())
+print help(model.fit)
 
 
