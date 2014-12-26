@@ -22,3 +22,6 @@ print list(range(1,3))
 # l=list(chain.from_iterable(l))
 # for i in range(0,len(e)%s): l.append(4)
 # print l
+
+w=2.345678
+print round(w,2)

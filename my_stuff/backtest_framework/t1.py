@@ -14,21 +14,19 @@ rank=df2.rank(axis=1)
 # pct_rank=rank/len(rank.columns)
 
 def ret_buy_bucket(rank,ret,num_buckets):
-#     print rank
     step=float(1)/float(num_buckets)
-    print step
     LI=[step for i in range(0, num_buckets)]
     LI=[0]+LI
     LI=np.cumsum(LI)
     LI=list(LI)
-    print LI
+    LI2=list(range(0,len(LI)-1))
+    ii=0
+    dfs=pd.DataFrame(index=rank.index,columns=LI2)
     for i in LI:
-        print i
         if i==0:pass
         else:
             upper=i
             lower=i-step
-            print upper, lower
             pct_rank=rank/len(rank.columns)
             sig=(pct_rank[(pct_rank>lower) & (pct_rank<=upper)])*1
             sig=sig.fillna(0)
@@ -37,14 +35,16 @@ def ret_buy_bucket(rank,ret,num_buckets):
             w_sig = sig/float(sig2)
             w_ret=w_sig*ret
             w_ret = w_ret.sum(axis=1)
-            print sig
-            print w_ret
+            dfs[ii]=w_ret
+            ii+=1
+    return dfs
 
     
 
 #     print w_ret
 
-xx=ret_buy_bucket(rank,df2,3)
+xx=ret_buy_bucket(rank,df2,5)
+print xx
 # ret=sig*ret_individual
 # ret2=ret.sum(axis=1)
 

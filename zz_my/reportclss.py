@@ -67,6 +67,9 @@ class newreport:
         plt.close()
         self.story.append(Spacer(1,0.1*inch))
     def add_df(self,df,h,w):
+        f = lambda x: round(x,2)
+        df=df.applymap(f)
+        
         def dfTable(df):
             df2 = df.reset_index() # reset the index so row labels show up in the reportlab table
             n = df2.columns.nlevels # number of table header rows to repeat

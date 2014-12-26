@@ -77,4 +77,48 @@ def oo_split_bysig(df):
         df3[i]=ii.iloc[:,1]
     return df3
 
+def rankreturn(rank,ret):
+    """will create returns buy signal strength"""
+    rank_sorted=pd.DataFrame(np.ones_like(rank),index=rank.index)-1
+    for i in range(0,len(rank.index)):
+        for ii in range(0,len(rank.columns)):
+            iint=int(rank.iloc[i,ii])
+            rank_sorted.iloc[i,int(iint)]=ret.iloc[i,ii]#ret.iloc[i,ii]
+    return rank_sorted
+
+def ret_buy_bucket(rank,ret,num_buckets):
+    print rank.tail(5)
+    rank=rank.fillna(0)
+    ret=ret.fillna(0)
+    step=float(1)/float(num_buckets)
+    LI=[step for i in range(0, num_buckets)]
+    LI=[0]+LI
+    LI=np.cumsum(LI)
+    LI=list(LI)
+    LI2=list(range(0,len(LI)-1))
+    ii=0
+    dfs=pd.DataFrame(index=rank.index,columns=LI2)
+    for i in LI:
+        if i==0:pass
+        else:
+            upper=i
+            lower=i-step
+            pct_rank=rank/len(rank.columns)+0.00001
+            sig=(pct_rank[(pct_rank>=lower) & (pct_rank<upper)])*1
+#             print lower,upper
+#             print pct_rank.tail(8)
+#             print sig.tail(8)
+            sig=sig.fillna(0)
+            sig=(sig>0)*1
+            sig2=sig.sum(axis=1)[-1]
+            w_sig = sig/float(sig2)
+            w_ret=w_sig*ret
+#             if ii==1:
+#             print sig.tail(8)
+#             else:pass
+            w_ret = w_ret.sum(axis=1)
+            dfs[ii]=w_ret
+            ii+=1
+    return dfs
+
     
