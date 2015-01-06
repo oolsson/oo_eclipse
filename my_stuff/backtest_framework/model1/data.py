@@ -54,6 +54,7 @@ for i in tick_list:
             else:pass
         else:pass
     else:pass
+    print i
 
 
     
