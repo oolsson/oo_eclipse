@@ -1,5 +1,6 @@
 from sklearn import datasets
 import matplotlib.pyplot as plt
+import scipy as sp
 import numpy as np
 diabetes = datasets.load_diabetes()
 diabetes_X_train = diabetes.data[:-20]

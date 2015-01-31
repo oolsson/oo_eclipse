@@ -21,7 +21,7 @@ def replace_na_with_avg(df):
     df=df.T.fillna(df.T.mean())
     df=df.T
     df2=pd.DataFrame(np.ones_like(df),index=df.index,columns=df.columns)
-    df2=df2.applymap(f)
-    print df2.head(20)
+#     df2=df2.applymap(f)
+#     print df2.head(20)
     df=df+df2
     return df

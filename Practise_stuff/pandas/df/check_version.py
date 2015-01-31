@@ -1,3 +1,3 @@
-import pandas as pd
+import scipy as pd
 
 print pd.version

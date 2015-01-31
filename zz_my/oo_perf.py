@@ -87,7 +87,7 @@ def rankreturn(rank,ret):
     return rank_sorted
 
 def ret_buy_bucket(rank,ret,num_buckets):
-    print rank.tail(5)
+#     print rank.tail(5)
     rank=rank.fillna(0)
     ret=ret.fillna(0)
     step=float(1)/float(num_buckets)
