@@ -30,7 +30,7 @@ print df
 #print 'selecting rows----------------'
 #print df.xs('b')
 # print df.ix[1]
-df=df.reindex(df.index[1:]) 'drop first row'
+df=df.reindex(df.index[1:]) #'drop first row'
 print df
 
 # print 'multilogic----------------'

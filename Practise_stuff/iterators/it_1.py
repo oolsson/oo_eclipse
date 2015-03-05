@@ -20,7 +20,8 @@ print 'next'
 
 print list(it.chain('abc', 'def'))
 print list(it.chain(['abc', 'def']))
-print list(it.combinations('ABC', 2))
+print 'combinations---------------'
+print list(it.combinations('ABCDEF', 2))
 print list(it.permutations('ABC', 2))
 print list(it.combinations_with_replacement('ABC', 2))
 print list(it.compress('ABCder', [1,0,1]))

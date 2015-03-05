@@ -39,8 +39,8 @@ print df.A[1:4].values
 print df.A.tail(5).values
 '''
 
-'''
-'---accessing and manipolating using rows and columns
+
+'---accessing and manipolating using rows and columns'
 row = df.ix[1] #chooses row 1, !NOT 0
 column = df['A']  #same as df.A
 print df
@@ -48,4 +48,5 @@ print row
 print column
 print df.sub(row, axis='columns') #subtracts rows choosen from all other rows
 print df.sub(column, axis='index') #subtracts column choosen from all other columns
-''' 
+print df.div(column, axis='index')
+
