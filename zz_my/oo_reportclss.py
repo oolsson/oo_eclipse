@@ -260,6 +260,21 @@ class fin:
         plt.savefig("C:/Users/oskar/Documents/doc_no_backup/python_crap/temp/%s.png" %(str(self.pic.num)))
         self.rep.addimage("C:/Users/oskar/Documents/doc_no_backup/python_crap/temp/%s.png"%(str(self.pic.num)),7,4,'LEFT')
         plt.close()
+    def add_multichart(self,security,start,end,rc_size,**kwargs):
+        df1=pd.DataFrame()
+        for i in range(0,len(security)):
+            df =Quandl.get(security[i], trim_start=start, trim_end=end, authtoken="XgkWhb4QXS6cgd4AxWSz")
+            y=pd.DataFrame(df.iloc[:,0].apply(f).values,columns=[i],index=df.index)
+            df1=df1.combine_first(y)
+        df=df1.ffill()
+        df.columns=kwargs['legend1']
+        df.plot(subplots=True, layout=rc_size, figsize=(9, 9), sharex=False,fontsize=8)
+        self.pic.new()
+        plt.savefig("C:/Users/oskar/Documents/doc_no_backup/python_crap/temp/%s.png" %(str(self.pic.num)))
+        self.rep.addimage("C:/Users/oskar/Documents/doc_no_backup/python_crap/temp/%s.png"%(str(self.pic.num)),7,4,'LEFT')
+        plt.close()
+                
+                
     def write_rep(self,name):
         self.rep.writereport(name) 
         

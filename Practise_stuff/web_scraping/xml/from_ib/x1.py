@@ -16,18 +16,18 @@ for i in root.findall("./"):
     print i
 
 
-# print'mapping table-------------------------------'    
-# list1=[[],[]]
-# 
-# 
-# for i in root.findall("./FinancialStatements/COAMap/"):
-# #     print i.attrib
-# #     print i.get('coaItem'), i.text
-#     list1[0].append(i.get('coaItem'))
-#     list1[1].append(i.text)
-# S2=pd.Series(list1[1],index=list1[0])
-# print S2
-# print S2.to_dict()
+print'mapping table-------------------------------'    
+list1=[[],[]]
+ 
+ 
+for i in root.findall("./FinancialStatements/COAMap/"):
+#     print i.attrib
+#     print i.get('coaItem'), i.text
+    list1[0].append(i.get('coaItem'))
+    list1[1].append(i.text)
+S2=pd.Series(list1[1],index=list1[0])
+print S2
+print S2.to_dict()
     
 
 print'qarterly--------------------------------------------'
@@ -64,31 +64,29 @@ print df2.to_string()
 
 
     
-print'--------------------------'
-
+# print'--------------------------'
+# 
 # for i in root.findall("./FinancialStatements/InterimPeriods/"):
 #     print i
 #     print i.attrib
 #     print i.get('Type')
 #     print i.text
 #     print i.getchildren()
-
-
-# 
+#  
 # for i in root.findall("./country/neighbor"):
 #     print i
-# 
-# 
+#  
+#  
 # print "Nodes  that have a 'year' child "
-# 
+#  
 # for i in root.findall(".//year/.."):
 #     print i.tag,i.get('name'), i.attrib, i.items(),i.keys()
-#     
+#      
 # print"Nodes with name='Singapore' that have a 'year' child"
-# 
+#  
 # for i in root.findall(".//year/..[@name='Singapore']"):
 #     print i.tag,i.get('name'), i.attrib, i.items(),i.keys()
-#     
-# 
+#      
+#  
 # for i in root.findall("./country/"):
 #     print i

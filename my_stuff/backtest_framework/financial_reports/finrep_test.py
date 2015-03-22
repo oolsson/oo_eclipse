@@ -15,8 +15,8 @@ print df
 # fin.add_df(df,title1='NAT GAS',legend1=['NZD','BR'])
 
 # fin.add_chart(["OFDP/FUTURE_NG1"],start1,end1,title1='NAT GAS')
-# 
-fin.add_many_2ax(["OFDP/FUTURE_NG1","CHRIS/CME_AD1.6"],start2,end1,title1='NAT GAS',legend1=['NZD','BR'])
+fin.add_multichart(["OFDP/FUTURE_NG1","CHRIS/CME_AD1.6","OFDP/FUTURE_NG1","OFDP/FUTURE_NG1","CHRIS/CME_AD1.6","CHRIS/CME_AD1.6"],start2,end1,(2,-1),legend1=[7,8,2,3,4,5])
+# fin.add_many_2ax(["OFDP/FUTURE_NG1","CHRIS/CME_AD1.6"],start2,end1,title1='NAT GAS',legend1=['NZD','BR'])
 # fin.add_many(["OFDP/FUTURE_NG1","CHRIS/CME_AD1.6"],start2,end1,title1='NAT GAS',legend1=['NZD','BR'])
 # 
 # fin.add_relative_perf(["CHRIS/CME_AD1.6",

@@ -11,7 +11,10 @@ df1=df1.T.groupby(level=0).first().T
 # df1=df1.drop_duplicates()
 print df1
 
-df3 = pd.DataFrame(randn(8,2),columns=['a','b'])
+
+df3 = pd.DataFrame([[1,1],[2,1],[1,1],[3,1],[1,1],[5,1]],columns=['a','b'])
+df3=df3.drop_duplicates('a')
+print df3
 
 
 #'----combining data'

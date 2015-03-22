@@ -27,6 +27,7 @@ print time.strftime("%c", now)
 print time.strftime("%I %p", now)
 print time.strftime("%Y-%m-%d %H:%M:%S %Z", now)
 print time.strftime("%Y-%m-%d %H:%M:%S", now)
+print time.strftime("%Y%m%d %H:%M:%S", now)
 
 print '-------measuring time----------'
 def procedure():
