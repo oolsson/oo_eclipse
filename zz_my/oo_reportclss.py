@@ -17,6 +17,13 @@ import Quandl
 import ts_charting as charting
 import time
 import datetime as dt
+from bs4 import BeautifulSoup
+from urllib2 import urlopen
+from pandas.io.parsers import TextParser
+import urllib2
+import MySQLdb as mdb
+import pandas.io.sql as sql
+import matplotlib.pyplot as plt
 
 class pic_num:
     def __init__(self):
@@ -269,6 +276,84 @@ class fin:
         df=df1.ffill()
         df.columns=kwargs['legend1']
         df.plot(subplots=True, layout=rc_size, figsize=(9, 9), sharex=False,fontsize=8)
+        self.pic.new()
+        plt.savefig("C:/Users/oskar/Documents/doc_no_backup/python_crap/temp/%s.png" %(str(self.pic.num)))
+        self.rep.addimage("C:/Users/oskar/Documents/doc_no_backup/python_crap/temp/%s.png"%(str(self.pic.num)),7,4,'LEFT')
+        plt.close()
+    def add_crossvalue(self,list):
+        f = lambda x: float(x)
+
+        def yf_get_key_stat(SYM):
+            url = "http://finance.yahoo.com/q/hl?s=" + SYM
+            page = urllib2.urlopen(url)
+            soup = BeautifulSoup(page)
+            res = [[x.text for x in y.parent.contents] for  y in soup.findAll('td', attrs={"class" : "yfnc_tabledata1"})]
+            res=pd.DataFrame(res)
+            res=res.drop_duplicates(0)
+            res.index=res[0]
+            res= res.reindex(index=['Average Price/Earnings','Average Price/Book','Average Price/Sales','Average Price/Cashflow'])
+            return res
+        list2=[]
+
+
+        for i in range(0,len(list)+1):
+            try:
+                p=yf_get_key_stat(list[i])
+                print dt.date.today(),',',p.iloc[0,1],',',p.iloc[1,1],',',p.iloc[2,1],',',p.iloc[3,1]
+                l=[list[i],dt.date.today(),float(p.iloc[0,1]),float(p.iloc[1,1]),float(p.iloc[2,1]),float(p.iloc[3,1])]
+                list2.append(l)
+            except:print i
+        df=pd.DataFrame(list2,columns=['ticker','Date','pe','pb','ps','pc'])
+        df.index=df['ticker']
+        print df
+        #individual plot
+        df.plot(kind='bar',subplots=True,figsize=(11,11))
+        self.pic.new()
+        plt.savefig("C:/Users/oskar/Documents/doc_no_backup/python_crap/temp/%s.png" %(str(self.pic.num)))
+        self.rep.addimage("C:/Users/oskar/Documents/doc_no_backup/python_crap/temp/%s.png"%(str(self.pic.num)),7,4,'LEFT')
+        plt.close()
+        #zplot---------------------------------------
+        df=df[['pe','pb','ps','pc']]
+        df_norm = (df - df.mean()) / (df.std())
+        df_norm.plot(kind='bar',subplots=True,figsize=(11,11))
+        self.pic.new()
+        plt.savefig("C:/Users/oskar/Documents/doc_no_backup/python_crap/temp/%s.png" %(str(self.pic.num)))
+        self.rep.addimage("C:/Users/oskar/Documents/doc_no_backup/python_crap/temp/%s.png"%(str(self.pic.num)),7,4,'LEFT')
+        plt.close()
+        #zplot2--------------------------------
+        df_score=df_norm.sum(axis=1)/4
+        df_score.plot(kind='bar',subplots=True,figsize=(11,11))
+        self.pic.new()
+        plt.savefig("C:/Users/oskar/Documents/doc_no_backup/python_crap/temp/%s.png" %(str(self.pic.num)))
+        self.rep.addimage("C:/Users/oskar/Documents/doc_no_backup/python_crap/temp/%s.png"%(str(self.pic.num)),7,4,'LEFT')
+        plt.close()
+    
+    def add_hist_value(self,l1,start,end):
+        def fix_valuedata(df):
+            ad=df.ix[dt.date(2014,9,10)]-df.ix[dt.date(2014,9,9)]
+            df.ix[dt.date(2014,9,10):]=df.ix[dt.date(2014,9,10):]-ad
+            return df
+        con = mdb.connect('localhost', "root","","test");
+        df1=pd.DataFrame()
+        for i in l1:
+            sq='select Date,pe,pb,ps from eq_fundamental where ticker = "%s" and date>"%s"'%(i,start)
+            print sq
+            df=sql.read_sql(sq, con, index_col='Date')
+            df=fix_valuedata(df)
+#             df=sql.read_sql('select Date,pe,pb,ps from eq_fundamental where ticker = "%s" and date>"1990-12-01 17:51:00"'%(i), con, index_col='Date')
+            dfz=(df-pd.expanding_mean(df, min_periods=1000))/pd.expanding_std(df, min_periods=2000)
+        #     dfz=(df.mean())/df.std()
+            dfzc=dfz.sum(axis=1)/len(dfz.columns)
+        #     print i,df.head(4)
+            df1[i]=dfzc.copy()
+        df1=df1.iloc[200:,:]
+        # df1
+        fig, ax = plt.subplots(figsize=(24,6))
+        # plt.figure(figsize=(24,5))
+        df1.boxplot()
+        l2=np.array([0])
+        B=B=np.concatenate((l2,df1.ix[-1].values))
+        ax.plot(B, color="w", linewidth=0.25,marker='o', markersize=8, markerfacecolor="red")
         self.pic.new()
         plt.savefig("C:/Users/oskar/Documents/doc_no_backup/python_crap/temp/%s.png" %(str(self.pic.num)))
         self.rep.addimage("C:/Users/oskar/Documents/doc_no_backup/python_crap/temp/%s.png"%(str(self.pic.num)),7,4,'LEFT')
